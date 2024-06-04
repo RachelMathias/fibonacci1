@@ -21,17 +21,17 @@ pipeline {
         }
         stage('Relative path') {
             steps {
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "$WORKSPACE/scripts/fibonacci.sh ${params.NUMBER}"'
+                bat "C:\\Program Files\\Git\\bin\\bash.exe -c \"$WORKSPACE/scripts/fibonacci.sh ${params.NUMBER}\""
             }
         }
         stage('Full path') {
             steps {
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "$WORKSPACE/scripts/fibonacci.sh ${params.NUMBER}"'
+                bat "C:\\Program Files\\Git\\bin\\bash.exe -c \"$WORKSPACE/scripts/fibonacci.sh ${params.NUMBER}\""
             }
         }
         stage('Change directory') {
             steps {
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "cd $WORKSPACE/scripts && ./fibonacci.sh ${params.NUMBER}"'
+                bat "C:\\Program Files\\Git\\bin\\bash.exe -c \"cd $WORKSPACE/scripts && ./fibonacci.sh ${params.NUMBER}\""
             }
         }
     }
